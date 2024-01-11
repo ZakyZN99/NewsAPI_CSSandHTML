@@ -1,3 +1,5 @@
+const axios = require('axios');
+
 const APIKEY = "1f75fdb1ac9645af8d3e176292ac7907";
 const url = `https://newsapi.org/v2/everything?q=`;
 
@@ -19,7 +21,7 @@ function dataNews(articles) {
 
     cardContainer.innerHTML= '';
 
-    articles.forEach((article) => {
+    articles.forEach((article) => { 
         if(!article.urlToImage) return;
         const cardClone = articlesNews.content.cloneNode(true);
         fillDataArticles(cardClone, article);
